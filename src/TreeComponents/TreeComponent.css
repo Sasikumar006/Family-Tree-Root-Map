@@ -1,0 +1,400 @@
+@import 'bootstrap/dist/css/bootstrap.css';
+
+/* section {
+  display: flex;
+  flex-flow: row wrap;
+  z-index: 4;
+  padding-top: 12%;
+  padding-left: 15%;
+  padding-right: 15%;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+} */
+
+.treeView {
+  height: 100vh;
+  width: 100vw;
+}
+
+.parentCard {
+  top: 50%;
+  position: relative;
+  left: 25%;
+  display: inline-block;
+}
+
+.title-contain {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#cardTitle {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 28px;
+  text-align: center;
+  color: white;
+}
+
+#img-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.column {
+  position: relative;
+  left: 30%;
+  display: inline-block;
+}
+
+.card-style {
+  background-color: rgb(27, 27, 27);
+  border-radius: 12px;
+  border-image-slice: 1;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s linear;
+  height: auto;
+  width: auto;
+  z-index: 4;
+}
+
+.card-style:hover {
+  box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
+  z-index: 4;
+}
+
+.cardHover {
+  display: inline-block !important;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  /* gap: 1.5rem; */
+  justify-content: center;
+}
+
+/*******Button css************/
+
+/* .button {
+  display: none; 
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: white;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+} */
+
+.card-style:hover .button {
+  visibility: visible !important;
+}
+
+.showChildButton {
+  visibility: visible !important;
+  background-color: #ff91a4 !important;
+}
+
+.button {
+  visibility: hidden;
+  width: 45px;
+  height: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  color: #000;
+  background-color: white;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #ff91a4;
+  box-shadow: 0px 15px 20px #cf5e71;
+  color: white;
+  transform: translateY(-4px);
+}
+
+
+.addProfileBtn {
+  height: 30px;
+  margin-bottom: 5px;
+  margin-top: -5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  text-transform: capitalize;
+  /* letter-spacing: 2.5px; */
+  font-weight: 600;
+  color: black;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.addProfileBtn:hover {
+  background-color: #ff91a4;
+  box-shadow: 0px 15px 20px #cf5e71;
+  color: white;
+  transform: translateY(-4px);
+}
+
+/*******Tooltip css************/
+
+.wrap .tooltip {
+  visibility: hidden;
+  width: 120px;
+  background: rgb(19, 20, 20);
+  background: linear-gradient(77deg, rgba(19, 20, 20, 1) 0%, rgba(17, 187, 15, 1) 100%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* .wrap .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(4, 53, 3) transparent transparent transparent;
+} */
+
+.wrap:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*******Profile card css************/
+
+.profile-card {
+  margin-left: -25px;
+  position: absolute;
+  height: 22vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-width: 185px; */
+  width: 55%;
+  background-color: white;
+  border-radius: 24px;
+  padding: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: orange;
+}
+
+.image .profile-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.profile-card .texts {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.texts .name {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.skill {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* .profile-card .buttons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.buttons button {
+  border: none;
+  color: blue;
+  font-size: 14px;
+  border-radius: 20px;
+  margin: 0 10px;
+  padding: 8px 24px;
+  background-color: orange;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} */
+
+/* .buttons .button:hover {
+  background-color: grey;
+} */
+
+/*******Child component css************/
+
+.form-container {
+  margin: 20px;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  /* display: flex; */
+}
+
+/* .column-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.column-right {
+  flex: 1;
+  padding-left: 20px;
+} */
+
+Label {
+  display: inline;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+Input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+} */
+
+/* button:hover {
+  background-color: #45a049;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.profileFormCardBtn {
+  display: inline-block;
+  width: 135px;
+  height: 35px;
+  font-family: 'Roboto', sans-serif;
+  /* font-size: 20px; */
+  text-transform: uppercase;
+  /* letter-spacing: 0.5px; */
+  font-weight: 600;
+  color: #000;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.profileFormCardBtn:hover {
+  background-color: #ff91a4;
+  box-shadow: 0px 15px 20px #cf5e71;
+  color: white;
+  transform: translateY(-4px);
+}
+
+.profileFormCardFooter {
+  justify-content: space-evenly;
+  display: flex;
+}
+
+/*******Child component css************/
+
+.parentLinkLine {
+  display: inline !important;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+  height: 30px;
+  width: 130px;
+  position: absolute;
+}
+
+.parentLinkLine::before {
+  display: inline !important;
+  content: '';
+  border-left: 3px solid black;
+  height: 31px;
+  position: absolute;
+  margin: 27px 0 0 65px;
+}
+
+.parentWigits {
+  display: inline !important;
+}
+
+
+
+
+
+/*******Child component css************/
+/*******Child component css************/
+/*******Child component css************/
