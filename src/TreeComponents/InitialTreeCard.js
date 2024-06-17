@@ -29,7 +29,7 @@ export default function InitialTreeCard() {
 
   // console.log('profileModalFormData', profileModalFormData);
   const handleChildRoot = (e, index, relship) => {
-    const buttonList = document.querySelectorAll(".showButton");
+    // const buttonList = document.querySelectorAll(".showButton");
     // buttonList[btnIdx].classList.add('showChildButton');
     // setProfileModalOpen(prev => !prev);
     setRelationShipTitle(prev => relship);
@@ -131,7 +131,6 @@ export default function InitialTreeCard() {
                 </div>
               </div>
               <div class="profile-card" style={{ top: '-12rem', left: '8.5rem' }}>
-                <span class="skill">{familyTreeList.map(x => x.relationShip === 'mother' && x.relationShip)}</span>
                 <Button
                   id="addProfileBtn"
                   className="addProfileBtn"
@@ -423,7 +422,7 @@ export default function InitialTreeCard() {
                   <Input type="file" name="photo" id="photo"
                     onChange={displayProfilePic}
                   />
-                  <img src="#" alt="Profile Picture" style={{ display: "none" }} id="profilePic" />
+                  <img src="#" alt="Profile" style={{ display: "none" }} id="profilePic" />
                 </div>
               </form>
             </div>
